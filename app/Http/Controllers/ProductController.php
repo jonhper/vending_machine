@@ -11,8 +11,7 @@ class ProductController extends Controller
 
     public function getProducts()
     {
-        return Machine::statusMachine();
-
+        return Product::all();
     }
 
 

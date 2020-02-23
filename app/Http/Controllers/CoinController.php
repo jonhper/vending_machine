@@ -10,7 +10,6 @@ class CoinController extends Controller
 
     public function getCoins()
     {
-        
         return Coin::all();
     }
 
