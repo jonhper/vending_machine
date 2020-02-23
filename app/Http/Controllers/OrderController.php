@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Libraries\Machine;
 use App\Order;
+use App\Product;
+use App\OrderCoins;
+use App\Coin;
 
 class OrderController extends Controller
 {
