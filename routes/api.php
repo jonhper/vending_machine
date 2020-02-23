@@ -21,6 +21,8 @@ Route::get('/coins', 'CoinController@getCoins');
 Route::get('/order/{idOrder}', 'OrderController@getOrder');
 // Post Order
 Route::post('/order', 'OrderController@addOrder');
+// Post order Payment
+Route::post('/order/{idOrder}/payment', 'OrderController@paymentOrder');
 // Get Order coins
 Route::get('/ordercoins/{idOrder}', 'OrderCoinController@getOrderCoins');
 // Post Order coins
