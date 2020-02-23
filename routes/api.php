@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Get Products
+Route::get('/products', 'ProductController@getProducts');
+// Get Coins
+Route::get('/coins', 'CoinController@getCoins');
+// Get Order
+Route::get('/order/{idOrder}', 'OrderController@getOrder');
+// Post Order
+Route::post('/order', 'OrderController@addOrder');
+// Get Order coins
+Route::get('/ordercoins/{idOrder}', 'OrderCoinController@getOrderCoins');
+// Post Order coins
+Route::post('/ordercoins/{idOrder}', 'OrderCoinController@addOrderCoins');
+// Delete Order coins
+Route::get('/ordercoins/{idOrder}/delete', 'OrderCoinController@deleteOrderCoins');
