@@ -16,11 +16,16 @@ class OrderCoinController extends Controller
 
     public function addOrderCoins($idOrder, Request $request)
     {
+        if(empty($request->post('coin'))){
+          return response("Coin field required", 400);
+        }
+        // TODO Check valid coin
+
         $orderCoin = new OrderCoins();
         $orderCoin->idOrder = $idOrder;
         $orderCoin->coin = $request->post('coin');
         if(!$orderCoin->save()){
-            App::abort(HTTP_INTERNAL_SERVER_ERROR, 'Error adding coins');
+            return response("Error adding coins", 500);
         }
 
         // Set response

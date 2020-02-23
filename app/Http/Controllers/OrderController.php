@@ -20,12 +20,16 @@ class OrderController extends Controller
 
     public function addOrder(Request $request)
     {
+        if(empty($request->post('status'))){
+          return response("Status field required", 400);
+        }
+        // TODO Check valid status
         $order = new Order();
         $order->productName = $request->post('productName');
         $order->status = $request->post('status');
         $order->save();
         if(!$order->id){
-            App::abort(HTTP_INTERNAL_SERVER_ERROR, 'Error saving order');
+            return response("Error saving order", 500);
         }
 
         // Set response
