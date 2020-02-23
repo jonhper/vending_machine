@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)https://getbootstrap.com/docs/4.0/examples/checkout/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Checkout example for Bootstrap</title>
+    <title>Vending Machine</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -17,62 +16,42 @@
     <div class="container">
       <div class="py-5 text-center">
         <h2>Vending Machine</h2>
-        <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
       </div>
-
       <div class="row">
-
-
-
-
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Total Inserted Coins</span>
           </h4>
-
           <ul id="" class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">TOTAL</h6>
               </div>
               <span id="totalCoinsInserted" class="text-muted"></span>
-
-
             </li>
-
             <li class="list-group-item justify-content-between lh-condensed">
-
               <div>
                 <button type="button" class="btn btn-sm btn-block btn-danger ml-auto" onclick="returnCoins()"> Return </button>
               </div>
-
             </li>
-
           </ul>
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Insert Coins</span>
           </h4>
           <ul id="coins" class="list-group mb-3"></ul>
         </div>
-
-
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Select Product</span>
           </h4>
           <ul id="products" class="list-group mb-3"></ul>
-
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Result</span>
           </h4>
           <ul id="result" class="list-group mb-3">
             <li class="list-unstyled alert alert-secondary" role="alert"> </li>
           </ul>
-
-
-
         </div>
-
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Status Machine</span>
@@ -110,7 +89,6 @@
         url: "http://localhost:8000/api/order",
       })
       .done(function( result ) {
-        console.log(result);
         idOrder = result.idOrder;
         // Display updated machine values
         updateMachineStatus(result.statusMachine);
@@ -171,7 +149,6 @@
           $.each(changeCoins, function(index, value) {
             let changeCoin = changeCoins[index];
             let coin = changeCoin.coin+' ';
-            console.log(changeCoin);
             //RETURN-COIN
             let coins = coin.repeat(changeCoin.coinsNumber);
             // Set coins inserted status machine
@@ -234,14 +211,7 @@
 
       $("#totalCoinsInserted").text(totalCoinsInserted.toFixed(2));
 
-
-      console.log(totalCoinsInserted);
     }
 
-
-
-
     </script>
-
-
 </body></html>
