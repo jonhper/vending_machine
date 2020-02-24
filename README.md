@@ -1,9 +1,11 @@
 # Vending Machine
 
+Developed with Laravel and MySQL
+
 ## Prerequisites
 
-    * git
-    * docker
+    * Git
+    * Docker
 
 ## Installation
 
